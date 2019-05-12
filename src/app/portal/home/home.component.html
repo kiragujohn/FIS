@@ -1,0 +1,71 @@
+<div class="container" style="padding-top: 90px;">
+  <div class="card">
+    <div class="card-header">
+      Calculate estimated time to drive between two cities
+    </div>
+    <div class="card-body">
+      <form #calculateTimeForm="ngForm" (ngSubmit)="onSubmit(calculateTimeForm)" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="form-group" style="background-color: lightgray; padding: 20px">
+                <label translate>
+                  Select Origin City
+                </label>
+                <select class="form-control" name="city1Id" (change)="hideResults()"
+                  [(ngModel)]="selectedCity1Name">
+                  <option *ngFor="let city of cities" [ngValue]="city">
+                    {{ city.address }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group" style="background-color: lightgray; padding: 20px">
+              <label translate>
+                Select destination City
+              </label>
+              <select class="form-control" name="city2Id" (change)="hideResults()"
+                [(ngModel)]="selectedCity2Name">
+                <option *ngFor="let city of cities" [ngValue]="city">{{ city.address }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="domain" translate>
+              Estimate your speed in km/h
+            </label>
+            <input type="text" id="speed" class="form-control" (change)="hideResults()" name="speed" required ngModel #speed="ngModel"
+              placeholder="Enter speed in km/h">
+            <span class="help-block" *ngIf="!speed.valid && speed.touched" translate>
+              Enter speed
+            </span>
+          </div>
+          <div class="col-md-6">
+            <br>
+            <div>
+              Travelling from <strong>{{selectedCity1Name?.address}}</strong> to
+              <strong>{{selectedCity2Name?.address}} </strong> taking a break of 20 minutes every after 2 hour and
+              driving at the
+              speed of <strong>{{speed.value}}</strong>km/h will take you
+            </div>
+            <span *ngIf="showResults">{{drivingTime}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-md-8 col-12-lg" style="padding-top: 10px;">
+            <div class="form-group">
+              <button class="btn btn-primary" [disabled]="!calculateTimeForm.valid" style="text-align:center"
+                type="submit" translate>
+                Calculate time
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

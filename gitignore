@@ -1,0 +1,7 @@
+*.class
+*.zip
+*.log
+*.pgsql
+*.DS_Store
+*.factorypath
+*.jar
