@@ -1,6 +1,6 @@
 {
     "/fis/*": {
-      "target": "http://localhost:8080",
+      "target": "https://fiscity.herokuapp.com",
       "secure": false
     }
 }
