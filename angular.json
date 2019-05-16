@@ -125,7 +125,7 @@
       }
     }
   },
-  "defaultProject": "fistest",
+  "defaultProject": "fisweb",
   "schematics": {
     "@schematics/angular:class": {
       "spec": false

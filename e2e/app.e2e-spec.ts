@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('fisTest App', () => {
+describe('fisweb App', () => {
   let page: AppPage;
 
   beforeEach(() => {

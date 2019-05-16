@@ -48,10 +48,7 @@
           <div class="col-md-6">
             <br>
             <div>
-              Travelling from <strong>{{selectedCity1Name?.address}}</strong> to
-              <strong>{{selectedCity2Name?.address}} </strong> taking a break of 20 minutes every after 2 hour and
-              driving at the
-              speed of <strong>{{speed.value}}</strong>km/h will take you
+             {{speed.value}}
             </div>
             <span *ngIf="showResults">{{drivingTime}}</span>
           </div>
