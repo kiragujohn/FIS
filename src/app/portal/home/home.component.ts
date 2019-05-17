@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   initialData: DistanceBetweenCitiesInitialData;
   cities: CityTransfer[];
-  errorSelect;
+  homeError;
   selectedCity1Name: string;
   selectedCity2Name: string;
   city1: CityTransfer;
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
         }
       },
       (error: Error) => {
-        this.errorSelect = error.message;
+        this.homeError = error.message;
       }
     );
   }
